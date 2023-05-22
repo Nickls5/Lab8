@@ -1,112 +1,80 @@
-# lab04
-Лабораторная работа №4
+## Laboratory work IV
 
-Буду использовать github actions
+Для создания и запуска рабочего процесса GitHub Actions требуется только репозиторий GitHub. 
 
-1) Копирую третью лабораторную работу git clone 
+## Homework
 
-2) Перехожу в папку cd lab03
+Вы продолжаете проходить стажировку в "Formatter Inc." (см [подробности](https://github.com/tp-labs/lab03#Homework)).
 
-3) Разрушаю связь git remote remove origin
+В прошлый раз ваше задание заключалось в настройке автоматизированной системы **CMake**.
 
-4) Привязываю к новому, заранее созданному репозиторию lab04 git remote add origin
+Сейчас вам требуется настроить систему непрерывной интеграции для библиотек и приложений, с которыми вы работали в [прошлый раз](https://github.com/tp-labs/lab03#Homework). Настройте сборочные процедуры на различных платформах:
 
-5) Создаю директорию .github/workflows mkdir .github cd .github mkfir workflows cd workflows
 
-6) Создаю nano CI.yml 
+- Создаю копию лабораторной работы №3.
+- Привязываю копию к заранее созданному репозиторию "Lab04".
+- Создаю каталог .github/workflows
+- В этом каталоге создаю файл CI.yml
+- Затем отправляю изменения на сервер.
 
-В редакторе 
-
+```console
+nikls@nikls-VirtualBox:~/Lab041$ mkdir .github
+nikls@nikls-VirtualBox:~/Lab041$ cd .github
+nikls@nikls-VirtualBox:~/Lab041/.github$ mkdir workflows
+nikls@nikls-VirtualBox:~/Lab041/.github$ cd workflows
+```
+```console
+nikls@nikls-VirtualBox:~/Lab041/.github/workflows$ cat > CI.yml
 name: CMake
 
 on:
-
  push:
-
   branches: [main]
-
  pull_request:
-
   branches: [main]
-
-
 
 jobs: 
-
  build_Linux:
-
-
 
   runs-on: ubuntu-latest
 
-
-
   steps:
-
   - uses: actions/checkout@v3
 
-
-
   - name: Configure Solver
-
-    run: cmake ${{github.workspace}}/solver_application/ -B ${{github.workspace}}/
-    
-    solver_application/build
-
-
+    run: cmake ${{github.workspace}}/solver_application/ -B ${{github.workspace}}/solver_application/build
 
   - name: Build Solver
-
     run: cmake --build ${{github.workspace}}/solver_application/build
 
-
-
   - name: Configure HelloWorld
-
-    run: cmake ${{github.workspace}}/hello_world_application/ -B ${{github.workspace}}/
-
-    hello_world_application/build
+    run: cmake ${{github.workspace}}/hello_world_application/ -B ${{github.workspace}}/hello_world_application/build
 
   - name: Build HelloWorld
-  
-    run: cmake --build ${{github.
-
-    workspace}}/hello_world_application/build
+    run: cmake --build ${{github.workspace}}/hello_world_application/build
 
  build_Windows:
 
   runs-on: windows-latest
 
   steps:
-  
   - uses: actions/checkout@v3
- 
+
   - name: Configure Solver
- 
-    run: cmake ${{github.workspace}}/solver_application/ -B ${{github.workspace}}
-    \solver_application/build
+    run: cmake ${{github.workspace}}/solver_application/ -B ${{github.workspace}}/solver_application/build
 
- 
   - name: Build Solver
-
     run: cmake --build ${{github.workspace}}/solver_application/build
 
-
   - name: Configure HelloWorld
-
-    run: cmake ${{github.workspace}}/hello_world_application/ -B ${{github.workspace}}/
-    
-    hello_world_application/build
+    run: cmake ${{github.workspace}}/hello_world_application/ -B ${{github.workspace}}/hello_world_application/build
 
   - name: Build HelloWorld
-
     run: cmake --build ${{github.workspace}}/hello_world_application/build
-    
-    
-   7)Заливаю на гит 
-   
-   $ git add .github
+^Z
+[4]+  Остановлен    cat > CI.yml
+```
 
-$ git commit -m "path"
-
-$ git push origin main
+```
+Copyright (c) 2015-2021 The ISC Authors
+```
