@@ -3,6 +3,7 @@
 
 ## Homework
 
+Клонировал репозиторий от лабораторной работы №4 и переключился лабораторной работы №6
 ```console
 nikls@nikls-VirtualBox:~$ mkdir Lab6
 nikls@nikls-VirtualBox:~$ cd Lab6
@@ -19,6 +20,7 @@ nikls@nikls-VirtualBox:~/Lab6$ git remote remove origin
 nikls@nikls-VirtualBox:~/Lab6$ git remote add origin https://github.com/Nickls5/Lab06
 ```
 
+- Добавил *CMakeLists.txt*
 ```console
 nikls@nikls-VirtualBox:~/Lab6$ cat > CMakeLists.txt
 cmake_minimum_required(VERSION 3.4)
@@ -43,7 +45,7 @@ include(CPackConfig.cmake)
 ^Z
 [1]+  Остановлен    cat > CMakeLists.txt
 ```
-
+- Добавил *CPackConfig.cmake*
 ```console
 nikls@nikls-VirtualBox:~/Lab6$ cat > CPackConfig.cmake
 include(InstallRequiredSystemLibraries)
@@ -68,7 +70,7 @@ include(CPack)
 [2]+  Остановлен    cat > CPackConfig.cmake
 ```
 
-
+- Перестроил файл *CI.yml*
 ```console
 nikls@nikls-VirtualBox:~/Lab6/.github/workflows$ rm CI.yml
 nikls@nikls-VirtualBox:~/Lab6/.github/workflows$ cat > CI.yml
@@ -110,6 +112,7 @@ jobs:
 [3]+  Остановлен    cat > CI.yml
 ```
 
+Запушил проект на сервер
 ```console
 nikls@nikls-VirtualBox:~/Lab6/.github/workflows$ cd ..
 nikls@nikls-VirtualBox:~/Lab6/.github$ cd ..
@@ -176,6 +179,7 @@ To https://github.com/Nickls5/Lab06
  * [new branch]      master -> master
 ```
 
+Создал tag
 ```console
 nikls@nikls-VirtualBox:~/Lab6$ git tag v0.1.0.0
 nikls@nikls-VirtualBox:~/Lab6$ git push origin master --tags
