@@ -1,9 +1,15 @@
-cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.4)
 
 project(hello_world)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib formatter_ex)
-add_executable(hello_world ${CMAKE_CURRENT_SOURCE_DIR}/src/hello_world.cpp)
-target_include_directories(hello_world PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib/src)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib formatter_ex_lib_dir)
+
+add_executable(hello_world ${CMAKE_CURRENT_SOURCE_DIR}/hello_world.cpp)
+# На этот раз вместо библиотеки создаём исполняемый файл. Синтаксис тот же.
+target_include_directories(hello_world PUBLIC
+${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib
+)
+
 target_link_libraries(hello_world formatter_ex_lib)
+# Привязываем к таргету hello_world библиотеку formatter_ex_lib
