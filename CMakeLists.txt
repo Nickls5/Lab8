@@ -4,6 +4,7 @@ project(Lab6)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+
 include_directories("formatter_lib")
 include_directories("formatter_ex_lib")
 include_directories("solver_lib")
@@ -13,6 +14,7 @@ add_library(formatter_ex_lib STATIC "formatter_ex_lib/formatter_ex.cpp")
 add_library(solver_lib STATIC "solver_lib/solver.cpp")
 
 add_executable(solver "solver_application/equation.cpp")
+
 
 target_link_libraries(solver solver_lib formatter_ex_lib formatter_lib)
 
