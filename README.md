@@ -87,7 +87,9 @@ EOF
 ```sh
 $ docker build -t logger .
 ```
+
 <details><summary>Output</summary>
+ 
 ```console
 nikls@nikls-VirtualBox:~/lab08$ sudo docker build -t logger .
 Sending build context to Docker daemon  172.5kB
@@ -176,6 +178,7 @@ Removing intermediate container d2d73ea634cf
 Successfully built 2328530460a4
 Successfully tagged logger:latest
 ```
+ 
 </details>
   
 ```sh
@@ -206,7 +209,9 @@ text3
 ```sh
 $ docker inspect logger
 ```
+
 <details><summary>Output</summary>
+ 
 ```console
 nikls@nikls-VirtualBox:~/lab08$ sudo  docker inspect logger
 [sudo] пароль для nikls: 
@@ -322,6 +327,7 @@ nikls@nikls-VirtualBox:~/lab08$ sudo  docker inspect logger
     }
 ]
 ```
+ 
   </details>
 
 
