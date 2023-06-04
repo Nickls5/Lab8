@@ -199,11 +199,10 @@ ubuntu       18.04     f9a80a55f492   4 days ago           63.2MB
 
 ```sh
 $ mkdir logs
-$ docker run -it -v "$(pwd)/logs/:/home/logs/" logger
+nikls@nikls-VirtualBox:~/workspace/lab08$ sudo docker run -it -v "$(pwd)/logs/:/home/logs/" logger
 text1
 text2
 text3
-<C-D>
 ```
 
 ```sh
@@ -338,3 +337,4 @@ $ cat logs/log.txt
 ```
 Copyright (c) 2015-2021 The ISC Authors
 ```
+
