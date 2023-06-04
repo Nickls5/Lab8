@@ -333,6 +333,13 @@ nikls@nikls-VirtualBox:~/lab08$ sudo  docker inspect logger
 ```sh
 $ cat logs/log.txt
 ```
+```console
+nikls@nikls-VirtualBox:~/workspace/lab08$ cat logs/log.txt
+text1
+text2
+text3
+
+```
 
 ```
 Copyright (c) 2015-2021 The ISC Authors
